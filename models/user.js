@@ -6,8 +6,8 @@ const validateEmail = function(email) {
 };
 
 // Schema to create user model
-const userSchema = new Schema(
-  {
+const userSchema = new Schema({
+
     username: {
       type: String,
       unique: true,
@@ -35,8 +35,7 @@ const userSchema = new Schema(
         getters: true
     },
     id: false
-}
-);
+});
 
 // friendCount Virtual
 userSchema.virtual('friendCount').get(function () {
