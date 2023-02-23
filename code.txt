@@ -1,10 +1,11 @@
 Create folder structure
 -config, controllers, models, routes/api, seeds (optional)
-
 config: connection.js to connect to mongoDB
 controllers: userControllers.js , thoughtControllers.js (w reactions)
-
 models: user model, thought model, reaction schema
+
+
+
 routes/api: index in routes root, index in api root, user routes, thought routes.
 Server setup with connection to database same as mini project
 
@@ -16,61 +17,6 @@ postSchema
   .get(function () {
     return this.tags.length;
   });
-
-
-for user model:
-**User**:
-
-* `username`
-  * String
-  * Unique
-  * Required
-  * Trimmed
-
-* `email`
-  * String
-  * Required
-  * Unique
-  * Must match a valid email address (look into Mongoose's matching validation)
-
-* `thoughts`
-  * Array of `_id` values referencing the `Thought` model
-
-* `friends`
-  * Array of `_id` values referencing the `User` model (self-reference)
-
-**Schema Settings**:
-
-Create a virtual called `friendCount` that retrieves the length of the user's `friends` array field on query.
-
-for thoughts model: 
-
-**Thought**:
-
-* `thoughtText`
-  * String
-  * Required
-  * Must be between 1 and 280 characters
-
-* `createdAt`
-  * Date
-  * Set default value to the current timestamp
-  * Use a getter method to format the timestamp on query
-
-* `username` (The user that created this thought)
-  * String
-  * Required
-
-* `reactions` (These are like replies)
-  * Array of nested documents created with the `reactionSchema`
-
-**Schema Settings**:
-
-Create a virtual called `reactionCount` that retrieves the length of the thought's `reactions` array field on query.
-
-reaction schema: 
-Reaction ID column (assignment.js in mini project lines 5-8)
-
 
 ROUTES: 
 ### API Routes
