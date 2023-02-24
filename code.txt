@@ -6,7 +6,7 @@ models: user model, thought model, reaction schema
 
 
 
-routes/api: index in routes root, index in api root, user routes, thought routes.
+
 Server setup with connection to database same as mini project
 
 
